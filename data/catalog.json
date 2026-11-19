@@ -2253,6 +2253,11 @@
    "answers": "the KFGQPC font each muṣḥaf's text is set in — the only one guaranteed to draw it; named in the file's `font` block"
   },
   {
+   "path": "data/font-glyphs/<key>.json",
+   "format": "quran-font-glyphs",
+   "answers": "which words the font draws with one glyph for several letters and their marks, where the codepoints alone do not describe the picture; and whether normalising the text changes what HarfBuzz draws"
+  },
+  {
    "path": "data/word-index.json",
    "format": "quran-word-index",
    "normative": true,

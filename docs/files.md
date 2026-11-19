@@ -19,6 +19,7 @@ from them.
 | convert an āyah reference between editions | `ayah-map.json` / `.csv` |
 | know which counting system an edition follows, and the boundaries of all six | `counting.json` |
 | query in SQL | `quran.sqlite.gz` |
+| count signs from the text, or draw it with another font | `font-glyphs/<key>.json` |
 | verify what you downloaded | `manifest.json` |
 | read the findings and how this was built | `reports/` |
 
@@ -65,6 +66,18 @@ The KFGQPC font each muṣḥaf's text is set in, one `.ttf` per riwāyah, copie
 from the same package as the text. Each muṣḥaf file's `font` block names its
 own (`family`, `file`, `sha256`); ship that font with that text, because the
 words use codepoints only it is guaranteed to draw. See `format.md`, *Font*.
+
+## `data/font-glyphs/<key>.json`
+
+What each muṣḥaf's font does to its text, measured by shaping every word with
+it: the words the font draws with one glyph for two or more letters and their
+marks, where the codepoints alone need not describe the picture, and whether
+normalising a word changes what HarfBuzz draws (it changes none). A view, not
+normative; `schema/font-glyphs-1.0.json`. Unlike everything else in `data/` it
+is not written by `pipeline/build.py`, which needs only the standard library,
+but by `python3 pipeline/font_glyphs.py`, which needs the two packages pinned
+in `conformance/requirements.txt`. `conformance/display_test.py` regenerates it
+in CI and fails if the committed file differs. See `format.md`, *Font*.
 
 ## `data/word-index.json` and `data/word-index.csv` — the numbering
 

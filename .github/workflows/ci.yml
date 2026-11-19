@@ -34,6 +34,23 @@ jobs:
         working-directory: lib/python
         run: python3 -m unittest test_quran_text
 
+  # The one job that shapes text. The build is standard-library Python and
+  # stays that way; this needs HarfBuzz, so it has a job and a requirements
+  # file of its own. It reads data/, which is committed, so it needs no build.
+  display:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: pip install -r conformance/requirements.txt
+      # Every word of every muṣḥaf, shaped with its own font: normalisation must
+      # not change what HarfBuzz draws, and data/font-glyphs/ must be current.
+      - name: Display gate
+        run: pytest -q conformance/display_test.py
+
   service:
     runs-on: ubuntu-latest
     steps:

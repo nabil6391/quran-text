@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/quran-ws/quran-text/main/schema/font-glyphs-1.0.json",
+  "title": "quran-font-glyphs 1.0",
+  "description": "For one muṣḥaf: the words its font draws with a single glyph standing for two or more letters and their marks, and whether normalisation changes any drawing under HarfBuzz. Measured by shaping data/mushaf/<key>.json with the font that file names; a view, not a source. The equalities between counts and lists are held by conformance/display_test.py, not by this schema.",
+  "type": "object",
+  "required": ["format", "format_version", "generated", "mushaf", "font", "shaper", "definition", "words", "normalization", "glyph_count", "word_count", "glyphs"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "quran-font-glyphs" },
+    "format_version": { "type": "string", "pattern": "^\\d+\\.\\d+$" },
+    "generated": { "type": "string", "format": "date", "description": "The dataset's edition date, as in the muṣḥaf file it was measured from." },
+    "mushaf": { "type": "string", "description": "The muṣḥaf's key: data/mushaf/<key>.json.", "minLength": 1 },
+    "font": {
+      "type": "object",
+      "required": ["file", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "file": { "type": "string", "description": "The font under data/fonts/, the one the muṣḥaf file's `font` block names.", "pattern": "^[^/]+\\.ttf$" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "shaper": { "type": "string", "description": "What turned codepoints into glyphs. The versions are pinned in conformance/requirements.txt.", "minLength": 1 },
+    "definition": { "type": "string", "description": "The rule that decides which glyphs are listed, in words.", "minLength": 1 },
+    "words": {
+      "type": "object",
+      "required": ["addressed_by", "shaped_as", "checked"],
+      "additionalProperties": false,
+      "properties": {
+        "addressed_by": { "type": "string", "minLength": 1 },
+        "shaped_as": { "type": "string", "minLength": 1 },
+        "checked": { "type": "integer", "description": "How many words were shaped. conformance/display_test.py holds it equal to the muṣḥaf's word_count.", "minimum": 1 }
+      }
+    },
+    "normalization": {
+      "type": "object",
+      "required": ["forms", "question", "words_drawn_differently"],
+      "additionalProperties": false,
+      "properties": {
+        "forms": { "type": "array", "items": { "enum": ["NFC", "NFD"] }, "minItems": 1, "uniqueItems": true },
+        "question": { "type": "string", "minLength": 1 },
+        "words_drawn_differently": {
+          "type": "array",
+          "description": "Words whose glyphs or positions change after the named normalisation. Empty means HarfBuzz draws the same picture from the normalised string. It is not a statement about other shapers: see docs/format.md, which says to display the published string untouched.",
+          "items": {
+            "type": "object",
+            "required": ["position", "form"],
+            "additionalProperties": false,
+            "properties": {
+              "position": { "type": "integer", "minimum": 0 },
+              "form": { "enum": ["NFC", "NFD"] }
+            }
+          }
+        }
+      }
+    },
+    "glyph_count": { "type": "integer", "minimum": 0, "description": "The length of `glyphs`." },
+    "word_count": { "type": "integer", "description": "Distinct words holding at least one listed glyph.", "minimum": 0 },
+    "glyphs": {
+      "type": "array",
+      "description": "In the order each glyph first appears in the muṣḥaf.",
+      "items": {
+        "type": "object",
+        "required": ["glyph", "replaces", "text", "word_count", "words"],
+        "additionalProperties": false,
+        "properties": {
+          "glyph": { "type": "string", "description": "The glyph's name in the font. KFGQPC's own, quoted.", "minLength": 1 },
+          "replaces": { "type": "array", "minItems": 1, "description": "Every run of plain glyphs the font's GSUB table can build this glyph from, by the font's own glyph names, with a ligature made of ligatures opened down to its plain glyphs. Usually one run.", "items": { "type": "array", "minItems": 3, "items": { "type": "string", "minLength": 1 } } },
+          "text": { "type": "array", "items": { "type": "string", "minLength": 3 }, "description": "The codepoints the glyph was shaped from, as they stand in the words, one string per distinct spelling. A mark the glyph does not take can stand between two it does, so a string is in its word in order but need not be contiguous.", "minItems": 1, "uniqueItems": true },
+          "word_count": { "type": "integer", "minimum": 1 },
+          "words": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "description": "Positions in the muṣḥaf file's `words`, from 0, ascending. Its length is `word_count`.", "minItems": 1, "uniqueItems": true },
+          "assembled_from": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "description": "Present when the glyph is a composite in the font's glyf table: the glyphs it is put together from, so what it shows can be read from them. Absent for a glyph that is an outline of its own." }
+        }
+      }
+    }
+  }
+}

@@ -272,8 +272,8 @@
   },
   {
    "path": "data/catalog.json",
-   "bytes": 44985,
-   "sha256": "5a5d0176df73068530ef7d76a0a095cd54b3a563c1adbb27695ecaf9c0ed9164"
+   "bytes": 45282,
+   "sha256": "ad247eec55de52825585685c4f7c2b4f5f990284e96c1f8d73498de40c2b5345"
   },
   {
    "path": "data/counting.json",
@@ -289,6 +289,41 @@
    "path": "data/differences.json",
    "bytes": 211011,
    "sha256": "6cc802f94967d863d507d298bf580c52e67dc2d78afb8aa11e93cb3815a3193a"
+  },
+  {
+   "path": "data/font-glyphs/bazzi.json",
+   "bytes": 15879,
+   "sha256": "cdd7ba81a08c0e031a1e1f4a358021c21e742a4ab3821e3b855d2ba4c58a082a"
+  },
+  {
+   "path": "data/font-glyphs/duri.json",
+   "bytes": 21673,
+   "sha256": "43b5b02758008d56e442d0b9a67b8c63af209719e14db3647b7c00dc24953831"
+  },
+  {
+   "path": "data/font-glyphs/hafs.json",
+   "bytes": 10001,
+   "sha256": "d8501274e41a99a5e12f33e73c92fd8b1bf2cfe251c5823cb92736c7291c2658"
+  },
+  {
+   "path": "data/font-glyphs/qalun.json",
+   "bytes": 15317,
+   "sha256": "76bbc9036b8284658516e7f2a4265b57599feaa145843663316efe2a7deec3ab"
+  },
+  {
+   "path": "data/font-glyphs/shubah.json",
+   "bytes": 14340,
+   "sha256": "7a00a4c69750597850df43ef15db5337bafe006382fd9a0ddba6dc82918944f0"
+  },
+  {
+   "path": "data/font-glyphs/susi.json",
+   "bytes": 21282,
+   "sha256": "cd0f49d34c2da88606646eef8d3168968024be1c2f00f409e00e22ef1dd8b940"
+  },
+  {
+   "path": "data/font-glyphs/warsh.json",
+   "bytes": 9377,
+   "sha256": "5fe540d9085cfdfaf289d05ca15794af50e893c720e2bdc1b650ef8f117b9eb4"
   },
   {
    "path": "data/fonts/UthmanicBazzi-v-3.0.ttf",

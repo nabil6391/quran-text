@@ -9,6 +9,20 @@ This project has not had a tagged release yet; everything below is unreleased.
 
 ### Format
 
+- **What the font draws beyond the codepoints is published, and normalisation
+  is measured.** New `data/font-glyphs/<key>.json`, one per muṣḥaf
+  (`quran-font-glyphs 1.0`, `schema/font-glyphs-1.0.json`). It lists every
+  glyph the muṣḥaf's own font substitutes for two or more letters with their
+  marks, and the words it draws: 29 glyphs and 469 words in Ḥafṣ. In such a
+  word the picture is the glyph's and need not be the signs the codepoints
+  name; the word of 17:7 in Ḥafṣ that holds a kashida is drawn with a small
+  wāw and a maddah it does not contain. The same pass shapes every word as
+  published, after NFC and after NFD: HarfBuzz draws no word of any of the
+  seven muṣḥafs differently. Both are derived from the font and the text by
+  `pipeline/font_glyphs.py`, and `conformance/display_test.py` holds them in
+  CI, the layer against a second implementation of its rule. The build itself
+  still needs only the standard library; shaping has its own pinned
+  `conformance/requirements.txt`. Additive: no existing file or key changes.
 - **The ḥizb and its parts are published as layers.** A muṣḥaf file gains
   `hizb_starts`, the 60 ḥizbs, and the subdivision its printed muṣḥaf uses:
   `rubu_al_hizb_starts` (240) in Ḥafṣ and Shuʿbah, `thumn_starts` (480) in
