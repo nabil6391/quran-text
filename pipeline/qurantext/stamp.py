@@ -14,7 +14,7 @@ under it.  A checksum that changes when nothing changed tells a reader nothing â
 the same defect the gzip timestamps had, one layer up.
 
 Dropping the date would fix reproducibility and lose something real: ``generated``
-is required by all four schemas, and a dataset that cannot say which edition a
+is required by all five schemas, and a dataset that cannot say which edition a
 file belongs to is harder to cite.  So the date stays, and stops coming from the
 clock.  It is a fact this repository declares and commits, like the source
 hashes beside it, and two builds a year apart from the same commit agree on it.

@@ -459,6 +459,22 @@ font instead, and the letter no longer joins the one before it. The Dūrī, Sūs
 and Bazzī fonts have every letter NFC produces. Text shown to a reader should be
 the published string, untouched.
 
+What one shaper does with a normalised word is measured, not assumed. Every
+word of all seven muṣḥafs is shaped by HarfBuzz with its own font three times —
+as published, after NFC, after NFD — and the glyphs and their positions are
+compared: no word is drawn differently. `data/font-glyphs/<key>.json` records
+the result under `normalization`, and `conformance/display_test.py` fails the
+day one is. That is a statement about HarfBuzz at the version pinned in
+`conformance/requirements.txt`, and about no other shaper; the Safari result
+above is why the advice stands.
+
+**Removing a codepoint is not normalising.** The kashida in particular must
+stay: besides seating a sign, it is part of what the font matches when it
+draws a stretch of a word as one glyph (see *Font*). Without it the glyph is
+not chosen: the word of 17:7 in Ḥafṣ that holds a kashida is drawn with one
+such glyph, and with none of the listed glyphs once the kashida is taken out
+(`conformance/display_test.py` holds both).
+
 The kashida, the editorial signs and the invisible controls are ink, not
 letters: `rasm`, `pointed` and `plain` drop all three, the search fold drops
 them, and two words that differ only by one of them are one word.
@@ -545,6 +561,38 @@ a stylesheet or a `Typeface` can refer to it exactly; `file` is the copy under
 
 The `font` block also says which one to ship with which text, because each
 muṣḥaf has its own: seven files, one per riwāyah, not one font for all seven.
+
+### Where the font draws more than the codepoints say
+
+The font does not draw every word sign by sign. For some stretches of two or
+more letters with their marks it substitutes one glyph drawn for that stretch.
+In the five muṣḥafs that print a sajdah line, every word under one is drawn
+this way. What such a glyph shows is the font's drawing, and it need not be
+the signs the codepoints name. The word of 17:7 in Ḥafṣ that holds a kashida
+is the plain case: its glyph, `gly030` in `data/fonts/UthmanicHafs-v-3.0.ttf`,
+shows a small wāw and a maddah when drawn — a reading by eye of the rendered
+glyph, which no test here makes — and the word contains neither `U+06E5` nor
+`U+0653`, which `conformance/display_test.py` does hold. The word is correct;
+the two signs live in the font.
+
+`data/font-glyphs/<key>.json` (`schema/font-glyphs-1.0.json`) lists, for each
+muṣḥaf, every such glyph with the run of glyphs it replaces, the codepoints
+that run was shaped from, and the positions in `words` of the words it draws.
+It is derived by reading the font's GSUB table and shaping every word; nothing
+in it is kept by hand, and the file states the rule it applies under
+`definition`. Two uses:
+
+- **Counting or classifying signs from codepoints.** In a listed word the
+  codepoints are what the release writes, and the picture is the glyph's. A
+  count taken from the string describes the string.
+- **Substituting another font.** The replacement has no such glyph, so it
+  draws a listed word from its codepoints alone.
+
+The layer says *that* a word is drawn this way. *Which* signs the glyph shows
+it can say only where the font does: a glyph the font assembles from other
+glyphs carries `assembled_from`, naming them — the lām-alif with a maddah in
+Warsh, Qālūn, Dūrī, Sūsī and Bazzī. Every other listed glyph is an outline of
+its own, and reading its signs needs an eye or the printed page.
 
 ## Provenance
 

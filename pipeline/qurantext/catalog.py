@@ -28,6 +28,8 @@ FILES = [
      "answers": "the same muṣḥaf as one row per word, for pandas, R and spreadsheets"},
     {"path": "data/fonts/<file>.ttf", "format": "truetype",
      "answers": "the KFGQPC font each muṣḥaf's text is set in — the only one guaranteed to draw it; named in the file's `font` block"},
+    {"path": "data/font-glyphs/<key>.json", "format": "quran-font-glyphs",
+     "answers": "which words the font draws with one glyph for several letters and their marks, where the codepoints alone do not describe the picture; and whether normalising the text changes what HarfBuzz draws"},
     {"path": "data/word-index.json", "format": "quran-word-index", "normative": True,
      "answers": "what word is number n, who reads it and how, and where it is in Ḥafṣ"},
     {"path": "data/word-index.csv", "format": "csv",

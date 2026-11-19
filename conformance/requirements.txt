@@ -1,0 +1,6 @@
+# What conformance/display_test.py and pipeline/font_glyphs.py shape with.
+# Pinned: the layer under data/font-glyphs/ is what THESE versions produce, and
+# a shaper upgrade that changes a drawing should arrive as a reviewed diff.
+uharfbuzz==0.56.1
+fonttools==4.46.0
+pytest==8.3.4

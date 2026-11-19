@@ -1,0 +1,53 @@
+{
+ "format": "quran-font-glyphs",
+ "format_version": "1.0",
+ "generated": "2026-09-08",
+ "mushaf": "warsh",
+ "font": {
+  "file": "UthmanicWarsh-v-3.0.ttf",
+  "sha256": "b644f1c6665baa95c9c0ab40b01a7f3e89edc42a0f50d3b244318a843bec81a9"
+ },
+ "shaper": "HarfBuzz, default features",
+ "definition": "A glyph is listed when the font's GSUB table substitutes it for a run of glyphs holding two or more letters and at least one combining mark. Each glyph of the run is traced back to a codepoint — through the font's cmap, its single substitutions (the positional forms) and, where a ligature is built from ligatures, through those — and takes that codepoint's Unicode category: Lo is a letter, Mn a mark, and anything else (the kashida and the small wāw and yāʾ, which are Lm; digits; signs) is neither. Such a glyph draws a stretch of a word, marks included, as one picture, so the signs it shows are those of the drawing and need not be those of the codepoints it replaces. A letter fused with its own mark, two marks fused together, and a ligature of letters alone are not listed.",
+ "words": {
+  "addressed_by": "position in the muṣḥaf file's `words`, from 0",
+  "shaped_as": "the word with its `after` marks re-attached, as the release prints it",
+  "checked": 77431
+ },
+ "normalization": {
+  "forms": [
+   "NFC",
+   "NFD"
+  ],
+  "question": "does HarfBuzz draw the word differently with this font after normalisation?",
+  "words_drawn_differently": []
+ },
+ "glyph_count": 24,
+ "word_count": 658,
+ "glyphs": [
+  {"glyph":"uniFEF5","replaces":[["uniFEDF","uniFE8E","uni0653"]],"assembled_from":["uniFEFB","uni0653"],"text":["لآ"],"word_count":359,"words":[105,132,151,490,534,1252,1286,1374,1744,2899,3921,4050,4412,4661,4725,5175,5224,5457,5600,5635,5977,6148,6201,6250,6288,6417,6426,6539,6625,7252,7306,8014,8103,8168,8572,9513,10112,10372,10625,10836,11043,11314,11360,11523,11676,12078,12145,12236,12309,12738,12740,12741,12743,13411,14066,14728,14842,15164,16054,16094,16289,16459,16513,16560,16570,16775,16843,16947,16953,16956,17021,17075,17457,17515,17520,17649,17664,17708,17955,18006,18100,18754,18764,18841,19075,19272,19331,19443,19792,19886,19986,19998,20335,20446,20547,20692,20766,20915,21083,21178,21309,21753,22289,22368,22439,22989,23331,23991,24361,24376,24774,24810,24829,25190,25512,25655,25873,26057,26270,26573,26608,26630,26645,26976,27171,27260,27267,27376,27380,27386,27425,27812,28165,28298,28341,28430,28585,28615,28621,28624,28628,28964,29103,29241,29371,29834,30356,30387,30644,30662,31063,31230,31530,31947,32326,32381,32543,33060,33722,33906,33958,33967,33981,34167,34169,34534,34577,35353,35401,36262,36263,36296,36789,36836,36918,37021,37287,37420,37696,37912,38155,38159,38320,38336,38416,38504,38608,39607,40039,40125,40175,40177,40404,40522,40813,41000,41076,41181,41398,41671,41673,41888,42089,42324,42326,42457,43259,43423,44608,44881,45003,45079,45136,46207,46284,46325,46443,46489,46509,46725,47228,47500,48679,48752,49119,49304,49710,49867,50338,50347,50362,50595,50667,50909,51008,51330,51430,51704,51741,51792,53837,54124,54665,54691,54740,54769,54771,54773,54776,55076,55080,55546,55636,55692,55747,55960,56845,57111,57585,58088,58129,58385,58876,58903,59114,59820,60183,61060,61096,61659,62168,62175,62215,62481,62577,62880,63035,63301,63352,63553,63698,63860,63907,64004,64070,64539,65014,65167,65169,65626,65858,67928,68170,68412,68580,68595,68603,68614,68622,68632,68646,68660,68668,68688,68700,68710,68722,68732,68747,68756,68762,68769,68778,68791,68804,68811,68820,68827,68832,68839,68847,68854,68862,68872,68882,69207,69221,69988,69992,70204,70228,70241,70309,70366,70714,70727,70824,71641,71664,71858,71943,73062,73986,73992,74126,74457,74526,74535,74539,74896,74923,75706,75940,76094,76539,77308,77312,77317,77322]},
+  {"glyph":"_936","replaces":[["uniFEDF","afii57456","uniFE84","uni0653"]],"text":["لِأٓ"],"word_count":8,"words":[532,19329,36834,37586,38334,41179,53792,74327]},
+  {"glyph":"uniFE91_afii57456_zerojoin_uni0654_afii57454_uniFE8E","replaces":[["uniFE91","afii57456","tatweel","_.011","afii57454","uniFE8E"]],"text":["بِـَٔا"],"word_count":119,"words":[609,642,952,5599,6174,6304,6452,6487,6976,7027,7314,7809,8047,9604,10895,12522,12943,13703,14496,15391,16492,16585,16684,16726,16790,16940,17035,18213,18897,19059,19308,19719,19737,19822,20038,20261,20390,20893,20934,21086,21252,21475,21481,21695,22120,22130,22197,22493,23370,23405,23943,26593,27526,27572,27609,27895,29087,29679,32584,32729,35641,35655,37350,38447,39046,39930,40368,40416,41295,41380,41473,42041,42064,42200,43510,44289,44383,46662,47076,47222,48017,49422,49438,49449,49457,50163,50171,51315,51710,51737,52111,52156,52709,52788,53298,53539,53630,53661,59977,60479,60840,61070,61277,61574,61750,63478,63489,63703,64081,64322,64543,65176,68459,69604,71396,71822,74810,75217,76614]},
+  {"glyph":"uniFEF6","replaces":[["uniFEE0","uniFE8E","uni0653"]],"assembled_from":["uniFEFC","uni0653"],"text":["لآ"],"word_count":31,"words":[732,3113,3309,3822,3827,14059,21341,22792,28014,32769,44744,44759,47531,63686,69176,70371,73287,73414,73523,73528,74324,74518,74635,75507,75651,75817,75858,75875,76025,76493,76867]},
+  {"glyph":"_940","replaces":[["uniFEDF","afii57456","uniFE84","afii57455"]],"text":["لِأُ"],"word_count":10,"words":[2737,7020,16447,19790,19807,49719,58692,59378,60948,63647]},
+  {"glyph":"uniFEDF_afii57454_uniFE84_uni0653","replaces":[["uniFEDF","afii57454","uniFE84","uni0653"]],"text":["لَأٓ"],"word_count":60,"words":[2945,4985,7009,9440,12253,12257,17916,18502,19384,26402,27462,27940,29758,31869,31896,32743,34005,34013,34060,34261,34276,34289,34990,35022,35059,35255,40488,41315,44143,47177,47563,47742,47846,47938,48046,48137,48239,49088,49485,51061,51343,51646,52219,52233,52246,52267,52458,53277,53509,53689,55180,55357,57732,59681,59840,61012,62729,64227,64356,69068]},
+  {"glyph":"_941","replaces":[["uniFEDF","afii57457","afii57456","uniFE84","afii57455"]],"text":["لِّأُ"],"word_count":6,"words":[6347,9441,31789,40489,41316,45756]},
+  {"glyph":"_942","replaces":[["uniFEDF","afii57454","uniFE84","afii57455"]],"text":["لَأُ"],"word_count":15,"words":[9535,9538,12251,12252,13760,21067,21073,33777,33781,39932,40658,47461,47466,48686,58960]},
+  {"glyph":"_944","replaces":[["uniFEE0","afii57456","uniFE84","afii57455"]],"text":["لِأُ"],"word_count":2,"words":[9866,9872]},
+  {"glyph":"_939","replaces":[["uniFEDF","afii57457","afii57454","uniFE84","uni0653"]],"text":["لَّأٓ"],"word_count":1,"words":[11132]},
+  {"glyph":"uniFEDF_afii57457_afii57454_uniFE84_afii57455","replaces":[["uniFEDF","afii57457","afii57454","uniFE84","afii57455"]],"text":["لَّأُ"],"word_count":1,"words":[13757]},
+  {"glyph":"uniFEDF_uniFB51","replaces":[["alefwithhamzaabove","afii57454","uniFE8B","afii57456"]],"text":["أَئِ"],"word_count":13,"words":[16451,42147,47400,49104,49293,49633,50253,51417,53655,56820,57591,57824,69045]},
+  {"glyph":"uniFEE0_afii57454_uniFE84_afii57455","replaces":[["uniFEE0","afii57454","uniFE84","afii57455"]],"text":["لَأُ"],"word_count":13,"words":[20210,20282,20454,20652,20715,20954,21097,28537,30725,40653,44168,50206,58302]},
+  {"glyph":"uniFEDF_afii57456_uniFEF4_afii57457_afii57456_uniFEF2_afii57454","replaces":[["uniFEDF","afii57456","uniFEF4","afii57457","afii57456","uniFEF2","afii57454"]],"text":["لِيِّيَ"],"word_count":1,"words":[22424]},
+  {"glyph":"uniFE97_afii57454_uniFE8E__.011_uni06E1_uniFEE3_afii57454_uniFEE8_afii57457_afii57454_uniFE8E","replaces":[["uniFEA3","afii57454","uniFEF4","afii57456","uniFEF2","afii57454"]],"text":["حَيِيَ"],"word_count":1,"words":[23199]},
+  {"glyph":"uniFEDB_afii57454_uniFEE0_afii57457_afii57454_uniFE8E_uni06D6","replaces":[["uniFEE0","afii57454","uniFE84","uni065E"]],"text":["لَأࣱ"],"word_count":1,"words":[28732]},
+  {"glyph":"uniFEB3_uni06EC_uniFBAF_uni0653","replaces":[["uniFEB3","up","uniFBAF","uni0653"]],"text":["س۬ےٓ"],"word_count":2,"words":[29351,51482]},
+  {"glyph":"uniFEDF_afii57456_uniFEF4_afii57454_uniFEB4_afii57455_zerojoin__.011_afii57455_uniFEEE","replaces":[["uniFEDF","afii57456","uniFEF4","afii57454","uniFEB4","afii57455","tatweel","_.011","afii57455","uniFEEE"]],"text":["لِيَسُـُٔو"],"word_count":1,"words":[36083]},
+  {"glyph":"uniFEDF_afii57456_uniFE8E_afii57454","replaces":[["uniFEDF","afii57456","uniFE8E","afii57454"]],"text":["لِاَ"],"word_count":1,"words":[39296]},
+  {"glyph":"uniFEDB_afii57454_uniFEE0_afii57457_afii57454_uniFE8E__.035","replaces":[["uniFEDB","afii57454","uniFEE0","afii57457","afii57454","uniFE8E","_.035"]],"text":["كَلَّا࣌"],"word_count":6,"words":[39942,39964,47220,55483,76475,77209]},
+  {"glyph":"uniFEE0_uni06E1_uniFE84_uni0653","replaces":[["uniFEDF","down","uniFBAF","afii57458"]],"text":["لٜےْ"],"word_count":4,"words":[53774,69872,72017,72028]},
+  {"glyph":"arabicalef_uni06EC_uni0670","replaces":[["arabicalef_afii57454_up","uniFE8B","afii57456"]],"text":["ࡰئِ"],"word_count":1,"words":[61456]},
+  {"glyph":"uniFEDF_uniFE8E_afii57454_uni06D6","replaces":[["uniFEDF","uniFE8E","afii57454","uni06D6"]],"text":["لاَ࣌"],"word_count":1,"words":[63599]},
+  {"glyph":"arabicalef_afii57454_uniFEF3_uniFEE0_afii57454_uni0670","replaces":[["arabicalef_afii57454","uniFEF3","uniFEE0","afii57454","uni0670"]],"text":["ࡴيلَٰ"],"word_count":1,"words":[77255]}
+ ]
+}

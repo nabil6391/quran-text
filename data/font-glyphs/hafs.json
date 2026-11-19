@@ -1,0 +1,58 @@
+{
+ "format": "quran-font-glyphs",
+ "format_version": "1.0",
+ "generated": "2026-09-08",
+ "mushaf": "hafs",
+ "font": {
+  "file": "UthmanicHafs-v-3.0.ttf",
+  "sha256": "5c47602425fb4190327ab9e1a2e8ed2f53dceaf595d8ccc29ac32b8b209ad398"
+ },
+ "shaper": "HarfBuzz, default features",
+ "definition": "A glyph is listed when the font's GSUB table substitutes it for a run of glyphs holding two or more letters and at least one combining mark. Each glyph of the run is traced back to a codepoint — through the font's cmap, its single substitutions (the positional forms) and, where a ligature is built from ligatures, through those — and takes that codepoint's Unicode category: Lo is a letter, Mn a mark, and anything else (the kashida and the small wāw and yāʾ, which are Lm; digits; signs) is neither. Such a glyph draws a stretch of a word, marks included, as one picture, so the signs it shows are those of the drawing and need not be those of the codepoints it replaces. A letter fused with its own mark, two marks fused together, and a ligature of letters alone are not listed.",
+ "words": {
+  "addressed_by": "position in the muṣḥaf file's `words`, from 0",
+  "shaped_as": "the word with its `after` marks re-attached, as the release prints it",
+  "checked": 77432
+ },
+ "normalization": {
+  "forms": [
+   "NFC",
+   "NFD"
+  ],
+  "question": "does HarfBuzz draw the word differently with this font after normalisation?",
+  "words_drawn_differently": []
+ },
+ "glyph_count": 29,
+ "word_count": 469,
+ "glyphs": [
+  {"glyph":"Bism","replaces":[["afii57416.init","afii57456","afii57427.zz03","uni06E1","afii57445.zz04","afii57456"]],"text":["بِسۡمِ"],"word_count":3,"words":[0,28785,48789]},
+  {"glyph":"gly028","replaces":[["afii57421.init","uni06E1","afii57445.zz03","afii57454","uni0670","afii57446.zz04","afii57456"]],"text":["حۡمَٰنِ"],"word_count":33,"words":[2,8,32377,39286,39374,39563,39572,39715,39837,39940,39990,40004,40025,40029,40041,41086,41802,41865,46559,46933,46967,47149,48791,61390,63175,63196,63362,63391,63473,63792,72492,72679,75254]},
+  {"glyph":"laa03","replaces":[["afii57444.init","uni06E1","afii57411.zz04","uni0653"]],"text":["لۡأٓ"],"word_count":202,"words":[54,95,974,1426,1598,1779,2036,2097,2243,2318,3188,3788,3800,4152,4198,4203,4377,4541,5497,5577,6508,6931,7114,7134,7443,7620,8075,8163,8543,8594,8662,9165,10577,10591,10980,11218,11323,12537,12602,13072,13581,14105,14248,14423,15073,15206,15844,16667,16905,17060,17254,17459,17732,17859,17872,17994,18062,18136,18379,18901,19656,19939,20186,21483,21674,22001,22079,22532,23622,23975,24088,24113,24300,24530,24536,24655,24670,25084,25210,25646,25923,26388,26788,27406,27974,28367,28448,28488,29762,30548,30563,30602,30680,30932,31652,31759,31843,32093,32320,32498,32696,33153,34374,34500,34690,34897,35690,35712,35901,36082,36126,36250,36592,36788,36802,37004,37449,41298,42794,42849,44175,44523,44942,45112,45162,45180,45264,45593,46019,46138,47551,47559,47653,48127,48455,48462,48475,49276,50104,50675,50792,50922,51281,51400,51529,51749,51928,52046,52158,52336,52828,54105,54227,54816,55032,55150,55381,57792,57808,57945,57994,58036,58063,58294,58318,59193,59464,59718,60399,60750,60813,61444,61591,61794,62153,62504,62519,63383,64065,65192,67957,67981,68180,68935,69018,69058,69293,69574,69635,70272,70379,70912,71103,71991,72954,73881,74518,74621,74989,75364,75380,76300]},
+  {"glyph":"laa02","replaces":[["afii57444.init","afii57456","afii57411.zz04","uni0653"]],"text":["لِأٓ"],"word_count":8,"words":[532,19329,36834,37586,38334,41179,53792,74328]},
+  {"glyph":"gly025","replaces":[["afii57416.init","afii57456","afii57440","uni0654","afii57454","afii57415.zz04"]],"text":["بِـَٔا"],"word_count":119,"words":[609,642,952,5599,6174,6304,6452,6487,6976,7027,7314,7809,8047,9604,10895,12522,12943,13703,14496,15391,16492,16585,16684,16726,16790,16940,17035,18213,18897,19059,19308,19719,19737,19822,20038,20261,20390,20893,20934,21086,21252,21475,21481,21695,22120,22130,22197,22493,23370,23405,23943,26593,27526,27572,27609,27895,29087,29679,32584,32729,35641,35655,37350,38447,39046,39930,40368,40416,41295,41380,41473,42041,42064,42200,43510,44289,44383,46662,47076,47222,48017,49422,49438,49449,49457,50163,50171,51315,51710,51737,52111,52156,52709,52788,53298,53539,53630,53661,59977,60479,60841,61071,61278,61575,61751,63479,63490,63704,64082,64323,64544,65177,68460,69605,71398,71824,74811,75218,76615]},
+  {"glyph":"gly031","replaces":[["afii57425","afii57454","uni0670","afii57409","uni06E1"]],"text":["رَٰءۡ"],"word_count":1,"words":[1141]},
+  {"glyph":"laa04","replaces":[["afii57444.init","afii57454","afii57411.zz04","uni0653"]],"text":["لَأٓ"],"word_count":61,"words":[2945,4985,7009,9440,12253,12257,17916,18502,19384,26402,27462,27940,29758,31869,31896,32743,34005,34013,34060,34261,34276,34289,34990,35022,35059,35255,40488,41315,44143,47177,47563,47742,47846,47938,48046,48137,48239,49088,49485,51061,51343,51646,52219,52233,52246,52267,52458,53277,53509,53689,53962,55180,55357,57732,59681,59840,61013,62730,64228,64357,69069]},
+  {"glyph":"laa05","replaces":[["afii57444.init","afii57457","afii57454","afii57411.zz04","uni0653"]],"text":["لَّأٓ"],"word_count":1,"words":[11132]},
+  {"glyph":"afii57441.init_afii57454_afii57444.zz03_afii57456_afii57444.zz03_afii57457_uni0670_afii57470.zz04_afii57456","replaces":[["afii57441.init","afii57454","afii57444.zz03","afii57456","afii57444.zz03","afii57457","afii57454","afii57470.zz04","afii57456"]],"text":["فَلِلَّهِ"],"word_count":6,"words":[18871,32633,56063,64689,67956,70440]},
+  {"glyph":"gly029","replaces":[["afii57444.init","afii57456","afii57440","uni06E7","afii57457","afii57456","afii57450.zz04","afii57454"]],"text":["لِـِّۧيَ"],"word_count":1,"words":[22424]},
+  {"glyph":"sajda1","replaces":[["afii57450.init","afii57454","afii57427.zz03","uni06E1","afii57420.zz03","afii57455","afii57423.zz04","afii57455","afii57448","afii57446","afii57454","uni06E4"]],"text":["يَسۡجُدُونَۤ"],"word_count":2,"words":[22547,76048]},
+  {"glyph":"sajda2","replaces":[["afii57444.init","afii57456","afii57444.zz03","afii57457","afii57454","afii57470.zz04","afii57456","uni06E4"]],"text":["لِلَّهِۤ"],"word_count":4,"words":[32083,34775,61872,68197]},
+  {"glyph":"sajda3","replaces":[["afii57450.init","afii57454","afii57427.zz03","uni06E1","afii57420.zz03","afii57455","afii57423.zz04","afii57455","uni06E4"]],"text":["يَسۡجُدُۤ"],"word_count":3,"words":[32084,34776,42897]},
+  {"glyph":"gly030","replaces":[["afii57444.init","afii57456","afii57450.zz03","afii57454","afii57427.zz03","afii57455","afii57440","uni0654","afii57455","afii57448.zz04"]],"text":["لِيَسُـُٔو"],"word_count":1,"words":[36083]},
+  {"glyph":"laa06","replaces":[["afii57444.zz03","uni06E1","afii57411.zz04","uni0653"]],"text":["لۡأٓ"],"word_count":5,"words":[36278,44008,63581,76716,76756]},
+  {"glyph":"sajda4","replaces":[["afii57450.init","afii57454","afii57422.zz03","afii57456","afii57425.zz04","afii57457","afii57455","afii57448","afii57446","afii57454","uni06E4"]],"text":["يَخِرُّونَۤ"],"word_count":1,"words":[37486]},
+  {"glyph":"sajda5","replaces":[["afii57444.init","afii57456","afii57444.zz03","uni06E1","afii57411.zz04","afii57454","afii57424","uni06E1","afii57442.init","afii57454","afii57415.zz04","afii57446","afii57456","uni06E4"]],"text":["لِلۡأَذۡقَانِۤ"],"word_count":1,"words":[37487]},
+  {"glyph":"sajda6","replaces":[["afii57427.init","afii57455","afii57420.zz03","afii57457","afii57454","afii57423.zz04","uni0657","afii57415","uni06E4"]],"text":["سُجَّدࣰاۤ"],"word_count":3,"words":[37488,39717,53545]},
+  {"glyph":"sajda7","replaces":[["afii57422.init","afii57454","afii57425.zz04","afii57457","afii57455","afii57448","afii57415","afii57458","uni06E4"]],"text":["خَرُّواْۤ"],"word_count":2,"words":[39716,53544]},
+  {"glyph":"sajda8","replaces":[["afii57444.init","afii57454","afii57470.zz04","afii57455","uni06E5","uni06E4"]],"text":["لَهُۥۤ"],"word_count":1,"words":[42898]},
+  {"glyph":"sajda9","replaces":[["uni0671","afii57427.init","uni06E1","afii57420.zz03","afii57455","afii57423.zz04","afii57455","afii57448","afii57415","afii57458","uni06E4"]],"text":["ٱسۡجُدُواْۤ"],"word_count":3,"words":[43812,46932,61871]},
+  {"glyph":"sajda10","replaces":[["afii57411","afii57454","afii57444.init","afii57457","afii57454","afii57415.zz04","uni06E4"]],"text":["أَلَّاۤ"],"word_count":1,"words":[48737]},
+  {"glyph":"sajda11","replaces":[["afii57450.init","afii57454","afii57427.zz03","uni06E1","afii57420.zz03","afii57455","afii57423.zz04","afii57455","afii57448","afii57415","afii57458","uni06E4"]],"text":["يَسۡجُدُواْۤ"],"word_count":1,"words":[48738]},
+  {"glyph":"gly037","replaces":[["afii57431.zz03","afii57456","afii57450.zz04","uni0655","afii57456"]],"text":["طِيِٕ"],"word_count":1,"words":[50071]},
+  {"glyph":"gly027","replaces":[["afii57450.zz03","afii57457","afii57456","afii57450.zz04","uni0655","afii57456"]],"text":["يِّيِٕ"],"word_count":1,"words":[56600]},
+  {"glyph":"sajda12","replaces":[["afii57422.init","afii57454","afii57425.zz04","afii57457","afii57454","uni06E4"]],"text":["خَرَّۤ"],"word_count":1,"words":[58504]},
+  {"glyph":"sajda13","replaces":[["afii57425","afii57454","afii57415","afii57443.init","afii57456","afii57433.zz03","uni0657","afii57415.zz04","uni06E4"]],"text":["رَاكِعࣰاۤ"],"word_count":1,"words":[58505]},
+  {"glyph":"sajda14","replaces":[["afii57441.init","afii57454","uni0671.zz04","afii57427.init","uni06E1","afii57420.zz03","afii57455","afii57423.zz04","afii57455","afii57448","afii57415","afii57458","uni06E4"]],"text":["فَٱسۡجُدُواْۤ"],"word_count":1,"words":[68196]},
+  {"glyph":"sajda15","replaces":[["uni0671","afii57427.init","uni06E1","afii57420.zz03","afii57455","afii57423.zz04","uni06E1","uni06E4"]],"text":["ٱسۡجُدۡۤ"],"word_count":1,"words":[76918]}
+ ]
+}
